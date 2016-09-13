@@ -1,0 +1,21 @@
+{
+  "name": "apartment-description-snippets",
+  "version": "1.0.0",
+  "description": "Given an apartment description and a search query, generate a shorter snippet with details relevant to the search query. ",
+  "main": "app.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "darga.code@gmail.com",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dargaCode/ApartmentDescriptionSnippets.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dargaCode/ApartmentDescriptionSnippets/issues"
+  },
+  "homepage": "https://github.com/dargaCode/ApartmentDescriptionSnippets#readme"
+}
