@@ -11,6 +11,14 @@ const CONSTANTS = require('./constants');
 
 // FUNCTIONS
 
+function filterPhrases(phrases, query) {
+  return phrases.filter(function(phrase) {
+    phrase = phrase.toLowerCase();
+    query = query.toLowerCase();
+    return phrase.indexOf(query) > -1;
+  });
+}
+
 function splitStringIntoPhrases(str) {
   // data-driven for ease of tuning
   const endingChars = CONSTANTS.phraseEndingChars.join('');
@@ -30,8 +38,17 @@ function splitStringIntoPhrases(str) {
 
 // MAIN
 
-const str = 'To be, or not to be, that is the question. Whether tis nobler! in the mind, to suffer; the slings and arrows! of outrageous fortune? or to take arms - against a sea of troubles, and by opposing? end them:';
+const str = "To be, or not to be, that is the question: Whether 'tis Nobler in the mind to suffer The Slings and Arrows of outrageous Fortune, Or to take Arms against a Sea of troubles, And by opposing end them: to die, to sleep No more; and by a sleep, to say we end The Heart-ache, and the thousand Natural shocks That Flesh is heir to? 'Tis a consummation Devoutly to be wished. To die, to sleep, To sleep, perchance to Dream; aye, there's the rub, For in that sleep of death, what dreams may come, When we have shuffled off this mortal coil, Must give us pause.";
+
 const phrases = splitStringIntoPhrases(str);
 
 console.log(`string: '${str}' \n`);
-console.log("All matching phrases: ", phrases);
+console.log('All phrases: ', phrases, '\n');
+
+const filteredPhrases = filterPhrases(phrases, 'to');
+
+console.log('All matching phrases:', filteredPhrases, '\n');
+
+const snippet = filteredPhrases.join(' ');
+
+console.log('Final snippet:', snippet);
