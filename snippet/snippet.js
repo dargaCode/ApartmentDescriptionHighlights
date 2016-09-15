@@ -11,6 +11,20 @@ const CONSTANTS = require('./constants');
 
 // FUNCTIONS
 
+function generateSnippet(document, query) {
+  const phrases = splitStringIntoPhrases(document);
+  const filteredPhrases = filterPhrases(phrases, query);
+
+  console.log(`Original string: \n\n'${document}' \n`);
+  console.log('Search string:', query, '\n');
+  console.log('All phrases: \n\n', phrases, '\n');
+  console.log('Matching phrases: \n\n', filteredPhrases, '\n');
+
+  return filteredPhrases.join(' ');
+}
+
+// HELPERS
+
 function filterPhrases(phrases, query) {
   return phrases.filter(function(phrase) {
     phrase = phrase.toLowerCase();
@@ -40,15 +54,6 @@ function splitStringIntoPhrases(str) {
 
 const str = "To be, or not to be, that is the question: Whether 'tis Nobler in the mind to suffer The Slings and Arrows of outrageous Fortune, Or to take Arms against a Sea of troubles, And by opposing end them: to die, to sleep No more; and by a sleep, to say we end The Heart-ache, and the thousand Natural shocks That Flesh is heir to? 'Tis a consummation Devoutly to be wished. To die, to sleep, To sleep, perchance to Dream; aye, there's the rub, For in that sleep of death, what dreams may come, When we have shuffled off this mortal coil, Must give us pause.";
 
-const phrases = splitStringIntoPhrases(str);
+  const snippet = generateSnippet(str, 'to');
 
-console.log(`string: '${str}' \n`);
-console.log('All phrases: ', phrases, '\n');
-
-const filteredPhrases = filterPhrases(phrases, 'to');
-
-console.log('All matching phrases:', filteredPhrases, '\n');
-
-const snippet = filteredPhrases.join(' ');
-
-console.log('Final snippet:', snippet);
+  console.log(`Final snippet: \n\n '${snippet}'`);
