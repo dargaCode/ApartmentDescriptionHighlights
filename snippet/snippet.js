@@ -1,23 +1,19 @@
 
 'use strict'; // enable 'let' declarations
 
+// DEPENDENCIES
+
+const CONSTANTS = require('./constants');
+
 // CONSTANTS
 
-// data-driven for ease of tuning
-const PHRASE_ENDING_CHARACTERS = [
-  '.',
-  '!',
-  '?',
-  ',',
-  ';',
-  ':',
-  '-',
-];
+
 
 // FUNCTIONS
 
 function splitStringIntoPhrases(description) {
-  const endingChars = PHRASE_ENDING_CHARACTERS.join('');
+  // data-driven for ease of tuning
+  const endingChars = CONSTANTS.phraseEndingChars.join('');
   // match substrings ending in one of the phrase ending chars
   const phraseRegex = new RegExp(`.+?[${endingChars}]`,'g');
   const results = [];
