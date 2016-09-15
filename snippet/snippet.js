@@ -5,6 +5,11 @@
 
 const CONSTANTS = require('./constants');
 
+// CONSTANTS
+
+const KEYWORDS = CONSTANTS.keywords;
+
+
 // FUNCTIONS
 
 function generateSnippet(document, query) {
@@ -26,6 +31,39 @@ function filterPhrases(phrases, query) {
     phrase = phrase.toLowerCase();
     query = query.toLowerCase();
     return phrase.indexOf(query) > -1;
+  });
+}
+
+function isKeywordRelevant(keyword, queryWords) {
+  const keywordName = keyword.name;
+  const keywordCategories = keyword.categories;
+
+  // direct match between query and keyword
+  if (doesQueryContainKeyword(queryWords, keywordName)) {
+    return true;
+  }
+
+  // indirect match between query and keyword categories
+  if (doesQueryMatchKeywordCategories(queryWords, keywordCategories)) {
+    return true;
+  }
+
+  return false;
+}
+
+function doesQueryContainKeyword(queryWords, keyword) {
+  const matchFound = queryWords.includes(keyword);
+  console.log('found keyword "%s" in [%s]? %s', keyword, queryWords, matchFound);
+
+  return matchFound;
+}
+
+function doesQueryMatchKeywordCategories(queryWords, categories) {
+  return queryWords.some(function(queryWord) {
+    const matchFound = categories.includes(queryWord);
+    console.log('found queryWord "%s" in [%s]? %s \n', queryWord, categories, matchFound);
+
+    return matchFound;
   });
 }
 
