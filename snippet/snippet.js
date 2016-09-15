@@ -11,7 +11,7 @@ const CONSTANTS = require('./constants');
 
 // FUNCTIONS
 
-function splitStringIntoPhrases(description) {
+function splitStringIntoPhrases(str) {
   // data-driven for ease of tuning
   const endingChars = CONSTANTS.phraseEndingChars.join('');
   // match substrings ending in one of the phrase ending chars
