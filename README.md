@@ -33,6 +33,6 @@ Run `Node test/test.js` to run the test cases and check that their outputs match
 
 ## To Do:
 
-* Use real tests
+* Incorporate a real testing framework
 * Use an API to filter out prepositions (so that queries can include more natural-sounding English)
 * Use an API to generate additional search terms based on synonyms
