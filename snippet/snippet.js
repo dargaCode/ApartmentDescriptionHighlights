@@ -16,15 +16,15 @@ function generateSnippet(document, query) {
   console.log(`Original document: \n\n  '${document}' \n`);
 
   const phrases = splitStringIntoPhrases(document);
-  console.log('All phrases: \n\n  ', phrases, '\n');
+  // console.log('All phrases: \n\n  ', phrases, '\n');
 
-  console.log('Original query: \n\n  ', query, '\n');
+  // console.log('Original query: \n\n  ', query, '\n');
 
   const searchTerms = getSearchTerms(query);
   console.log('All search terms: \n\n  ', searchTerms, '\n');
 
   const filteredPhrases = getPhrasesMatchingSearch(phrases, searchTerms);
-  console.log('Matching phrases: \n\n  ', filteredPhrases, '\n');
+  // console.log('Matching phrases: \n\n  ', filteredPhrases, '\n');
 
   return filteredPhrases.join(' ');
 }
