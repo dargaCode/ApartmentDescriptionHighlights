@@ -34,6 +34,22 @@ function filterPhrases(phrases, query) {
   });
 }
 
+function getQueryWords(query) {
+  const simpleQuery = getSimpleText(query);
+  const queryWords = simpleQuery.toLowerCase().split(' ');
+
+  return queryWords;
+}
+
+// return lowercase letters, numbers, and spaces only
+function getSimpleText(str) {
+  // match letters, numbers, and spaces only
+  const regex = new RegExp('([^\\w\\s]|_)', 'g');
+  const cleanedText = str.replace(regex, '');
+
+  return cleanedText.trim();
+}
+
 // return an array of keywords with relevant categories
 function getRelevantKeywordNames(queryWords) {
   const relevantKeywords = KEYWORDS.filter(function(keyword) {
