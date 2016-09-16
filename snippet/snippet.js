@@ -52,6 +52,20 @@ function filterPhrases(phrases, query) {
   });
 }
 
+// convert the query into a list of search terms
+function getSearchTerms(query) {
+  const queryWords = getQueryWords(query);
+  console.log('Query words: \n\n', queryWords, '\n');
+
+  const keywords = getRelevantKeywordNames(queryWords);
+  console.log('Relevant keywords: \n\n', keywords, '\n');
+
+  // include the query words as well as relevant keywords, for more generous matching
+  const allSearchTerms = queryWords.concat(keywords);
+
+  return allSearchTerms;
+}
+
 function getQueryWords(query) {
   const simpleQuery = getSimpleText(query);
   const queryWords = simpleQuery.toLowerCase().split(' ');
