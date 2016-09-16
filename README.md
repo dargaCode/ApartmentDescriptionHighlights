@@ -17,7 +17,7 @@ The file `constants/example-descriptions.js` includes some example apartment des
 
 **Query string:** 'urban view'
 
-**Highlight snippet:** 'The Marc Palo Alto is a professionally managed apartment community offering high-rise living with an urban signature feel. The awe-inspiring, open concept apartment homes are perfect for every lifestyle and feature gorgeous city views, breathtaking mountain scenery overlooking Portola Valley, or a picture perfect Bay setting. Apartment units feature: Sky-high ceilings, Stainless steel appliances, Granite countertops, Private balconies, and a Garden Terrace.' 
+**Highlight snippet:** 'The Marc Palo Alto is a professionally managed apartment community offering high-rise living with an urban signature feel. Our prestigious downtown community is located in the heart of Palo Alto, California. The awe-inspiring, open concept apartment homes are perfect for every lifestyle and feature gorgeous city views, breathtaking mountain scenery overlooking Portola Valley, or a picture perfect Bay setting. Apartment units feature: Sky-high ceilings, Stainless steel appliances, Granite countertops, Private balconies, and a Garden Terrace.' 
 
 ## Customization
 
