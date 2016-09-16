@@ -69,9 +69,9 @@ function getSimpleText(str) {
 }
 
 // return an array of keywords with relevant categories
-function getRelevantKeywordNames(queryWords) {
+function getRelevantKeywordNames(searchTerms) {
   const relevantKeywords = KEYWORDS.filter(function(keyword) {
-    return isKeywordRelevant(keyword, queryWords);
+    return isKeywordRelevant(keyword, searchTerms);
   });
 
   const keywordNames = relevantKeywords.map(function(keyword) {
@@ -81,34 +81,34 @@ function getRelevantKeywordNames(queryWords) {
   return keywordNames;
 }
 
-function isKeywordRelevant(keyword, queryWords) {
+function isKeywordRelevant(keyword, searchTerms) {
   const keywordName = keyword.name;
   const keywordCategories = keyword.categories;
 
-  // direct match between query and keyword
-  if (doesQueryContainKeyword(queryWords, keywordName)) {
+  // direct match between search term and keyword
+  if (doesSearchContainKeyword(searchTerms, keywordName)) {
     return true;
   }
 
-  // indirect match between query and keyword categories
-  if (doesQueryMatchKeywordCategories(queryWords, keywordCategories)) {
+  // indirect match between search term and keyword categories
+  if (doesSearchMatchKeywordCategories(searchTerms, keywordCategories)) {
     return true;
   }
 
   return false;
 }
 
-function doesQueryContainKeyword(queryWords, keyword) {
-  const matchFound = queryWords.includes(keyword);
-  console.log('found keyword "%s" in [%s]? %s', keyword, queryWords, matchFound);
+function doesSearchContainKeyword(searchTerms, keyword) {
+  const matchFound = searchTerms.includes(keyword);
+  // console.log('found keyword "%s" in [%s]? %s', keyword, searchTerms, matchFound);
 
   return matchFound;
 }
 
-function doesQueryMatchKeywordCategories(queryWords, categories) {
-  return queryWords.some(function(queryWord) {
-    const matchFound = categories.includes(queryWord);
-    console.log('found queryWord "%s" in [%s]? %s \n', queryWord, categories, matchFound);
+function doesSearchMatchKeywordCategories(searchTerms, categories) {
+  return searchTerms.some(function(searchTerm) {
+    const matchFound = categories.includes(searchTerm);
+    // console.log('found searchTerm "%s" in [%s]? %s \n', searchTerm, categories, matchFound);
 
     return matchFound;
   });
