@@ -60,7 +60,7 @@ function getPhrasesMatchingSearch(phrases, searchTerms) {
 function doesPhraseMatchSearch(phrase, searchTerms) {
   // for more generous matching
   phrase = phrase.toLowerCase();
-  console.log('\nphrase "%s"', phrase);
+  // console.log('\nphrase "%s"', phrase);
 
   // does phrase contain any of the search terms?
   for (let searchTerm of searchTerms) {
@@ -68,7 +68,7 @@ function doesPhraseMatchSearch(phrase, searchTerms) {
     searchTerm = searchTerm.toLowerCase();
 
     const matchFound = phrase.includes(searchTerm);
-    console.log(' - includes searchTerm "%s"? %s', searchTerm, matchFound);
+    // console.log(' - includes searchTerm "%s"? %s', searchTerm, matchFound);
 
     // it's a match the moment any term is found
     if (matchFound) {
