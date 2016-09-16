@@ -25,6 +25,10 @@ const CONSTANTS = {
       categories: ['amenities', 'light', 'nature', 'privacy',],
     },
     {
+      name: 'downtown',
+      categories: ['centrally', 'city', 'urban',],
+    },
+    {
       name: 'flooring',
       categories: ['kitchen', 'room', 'tile',],
     },
