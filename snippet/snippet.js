@@ -7,6 +7,7 @@ const CONSTANTS = require('./constants');
 
 // CONSTANTS
 
+const ENDING_CHARS = CONSTANTS.phraseEndingChars;
 const KEYWORDS = CONSTANTS.keywords;
 
 
@@ -28,7 +29,7 @@ function generateSnippet(document, query) {
 
 function splitStringIntoPhrases(str) {
   // data-driven for ease of tuning
-  const endingChars = CONSTANTS.phraseEndingChars.join('');
+  const endingChars = ENDING_CHARS.join('');
   // match substrings ending in one of the phrase ending chars
   const phraseRegex = new RegExp(`.+?[${endingChars}]`,'g');
   const phrases = [];
