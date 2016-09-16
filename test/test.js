@@ -57,22 +57,18 @@ function getTestResults() {
   console.log('=================================\n\n');
 
   for (const testCase of TEST_CASES) {
-    const name = testCase.name;
     const document = testCase.document;
     const query = testCase.query;
     const snippet = SNIPPET.generateSnippet(document, query);
     const expectedResult = testCase.expectedResult;
+    const successful = snippet === expectedResult;
 
-    const result = {
-      name: name,
-      document: document,
-      query: query,
-      snippet: snippet,
-      successful: snippet === expectedResult,
-      expectedResult: expectedResult,
-    }
+    // add new values to evaluate success
+    testCase.snippet = snippet;
+    testCase.successful = successful;
 
-    testResults.push(result);
+    // save the modified testCase
+    testResults.push(testCase);
   }
 
   return testResults;
@@ -81,7 +77,6 @@ function getTestResults() {
 function showTestResults(testResults) {
   const totalTests = testResults.length;
   let passedTests = 0;
-
 
   console.log('\n\n================================');
   console.log('    DISPLAYING TEST RESULTS:');
