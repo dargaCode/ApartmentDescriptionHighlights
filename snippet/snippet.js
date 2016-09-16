@@ -101,16 +101,16 @@ function splitStringIntoPhrases(str) {
   const endingChars = CONSTANTS.phraseEndingChars.join('');
   // match substrings ending in one of the phrase ending chars
   const phraseRegex = new RegExp(`.+?[${endingChars}]`,'g');
-  const results = [];
+  const phrases = [];
 
   let matchInfo = [];
   // find all regex matches, and save them
   while ((matchInfo = phraseRegex.exec(str)) !== null) {
     const match = matchInfo[0].trim();
-    results.push(match);
+    phrases.push(match);
   }
 
-  return results;
+  return phrases;
 }
 
 // only surface one function
