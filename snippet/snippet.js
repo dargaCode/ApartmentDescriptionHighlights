@@ -3,7 +3,7 @@
 
 // DEPENDENCIES
 
-const CONSTANTS = require('./constants');
+const CONSTANTS = require('../constants/constants');
 
 // CONSTANTS
 

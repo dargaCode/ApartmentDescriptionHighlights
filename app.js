@@ -3,7 +3,7 @@
 
 // DEPENDENCIES
 
-const DESCRIPTIONS = require('./test/example-descriptions');
+const DESCRIPTIONS = require('./constants/example-descriptions');
 const SNIPPET = require('./snippet/snippet');
 
 // MAIN
