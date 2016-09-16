@@ -13,15 +13,16 @@ const KEYWORDS = CONSTANTS.keywords;
 // FUNCTIONS
 
 function generateSnippet(document, query) {
-  console.log(`Original document: \n\n  '${document}' \n`);
+  console.log('\n-------------------------');
+  console.log(`\n\nOriginal document: \n\n  '${document}' \n`);
 
   const phrases = splitStringIntoPhrases(document);
   // console.log('All phrases: \n\n  ', phrases, '\n');
 
-  // console.log('Original query: \n\n  ', query, '\n');
+  console.log('Original query: \n\n ', query, '\n');
 
   const searchTerms = getSearchTerms(query);
-  console.log('All search terms: \n\n  ', searchTerms, '\n');
+  console.log('All search terms: \n\n ', searchTerms, '\n');
 
   const filteredPhrases = getPhrasesMatchingSearch(phrases, searchTerms);
   // console.log('Matching phrases: \n\n  ', filteredPhrases, '\n');
@@ -83,10 +84,10 @@ function doesPhraseMatchSearch(phrase, searchTerms) {
 // convert the query into a list of search terms
 function getSearchTerms(query) {
   const queryWords = getQueryWords(query);
-  console.log('Query words: \n\n', queryWords, '\n');
+  console.log('Query words: \n\n ', queryWords, '\n');
 
   const keywords = getRelevantKeywordNames(queryWords);
-  console.log('Relevant keywords: \n\n', keywords, '\n');
+  console.log('Relevant keywords: \n\n ', keywords, '\n');
 
   // include the query words as well as relevant keywords, for more generous matching
   const allSearchTerms = queryWords.concat(keywords);
