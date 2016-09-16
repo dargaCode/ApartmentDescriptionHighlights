@@ -9,7 +9,7 @@ Take a detailed description of an apartment, and a search query. Use them to gen
 
 Run `Node app.js` from the base directory to run the example in that file. 
 
-The `settings/settings.js` file includes some example apartment descriptions to query against. 
+The file `constants/example-descriptions.js` includes some example apartment descriptions to query against. 
 
 ## Customization
 
