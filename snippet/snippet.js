@@ -34,6 +34,19 @@ function filterPhrases(phrases, query) {
   });
 }
 
+// return an array of keywords with relevant categories
+function getRelevantKeywordNames(queryWords) {
+  const relevantKeywords = KEYWORDS.filter(function(keyword) {
+    return isKeywordRelevant(keyword, queryWords);
+  });
+
+  const keywordNames = relevantKeywords.map(function(keyword) {
+    return keyword.name;
+  });
+
+  return keywordNames;
+}
+
 function isKeywordRelevant(keyword, queryWords) {
   const keywordName = keyword.name;
   const keywordCategories = keyword.categories;
