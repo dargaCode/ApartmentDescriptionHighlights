@@ -26,6 +26,23 @@ function generateSnippet(document, query) {
 
 // HELPERS
 
+function splitStringIntoPhrases(str) {
+  // data-driven for ease of tuning
+  const endingChars = CONSTANTS.phraseEndingChars.join('');
+  // match substrings ending in one of the phrase ending chars
+  const phraseRegex = new RegExp(`.+?[${endingChars}]`,'g');
+  const phrases = [];
+
+  let matchInfo = [];
+  // find all regex matches, and save them
+  while ((matchInfo = phraseRegex.exec(str)) !== null) {
+    const match = matchInfo[0].trim();
+    phrases.push(match);
+  }
+
+  return phrases;
+}
+
 function filterPhrases(phrases, query) {
   return phrases.filter(function(phrase) {
     phrase = phrase.toLowerCase();
@@ -94,23 +111,6 @@ function doesQueryMatchKeywordCategories(queryWords, categories) {
 
     return matchFound;
   });
-}
-
-function splitStringIntoPhrases(str) {
-  // data-driven for ease of tuning
-  const endingChars = CONSTANTS.phraseEndingChars.join('');
-  // match substrings ending in one of the phrase ending chars
-  const phraseRegex = new RegExp(`.+?[${endingChars}]`,'g');
-  const phrases = [];
-
-  let matchInfo = [];
-  // find all regex matches, and save them
-  while ((matchInfo = phraseRegex.exec(str)) !== null) {
-    const match = matchInfo[0].trim();
-    phrases.push(match);
-  }
-
-  return phrases;
 }
 
 // only surface one function
