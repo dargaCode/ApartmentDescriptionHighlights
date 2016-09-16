@@ -8,9 +8,11 @@ const SNIPPET = require('./snippet/snippet');
 
 // MAIN
 
+console.log('\n\n\nRUNNING APP.JS "MAIN" \n')
+
 const description = DESCRIPTIONS.matt;
-const query = 'in';
+const query = '#@$%^AMenitiES#&* $%#^&*NATURE!!@#$ ?kitcHEN?%{}';
 
 const snippet = SNIPPET.generateSnippet(description, query);
 
-console.log(`Final snippet: \n\n '${snippet}'`);
+console.log(`Final snippet: \n\n '${snippet}' \n\n`);
