@@ -10,17 +10,21 @@ const CONSTANTS = require('./constants');
 const ENDING_CHARS = CONSTANTS.phraseEndingChars;
 const KEYWORDS = CONSTANTS.keywords;
 
-
 // FUNCTIONS
 
 function generateSnippet(document, query) {
-  const phrases = splitStringIntoPhrases(document);
-  const filteredPhrases = filterPhrases(phrases, query);
+  console.log(`Original document: \n\n  '${document}' \n`);
 
-  console.log(`Original string: \n\n'${document}' \n`);
-  console.log('Search string:', query, '\n');
-  console.log('All phrases: \n\n', phrases, '\n');
-  console.log('Matching phrases: \n\n', filteredPhrases, '\n');
+  const phrases = splitStringIntoPhrases(document);
+  console.log('All phrases: \n\n  ', phrases, '\n');
+
+  console.log('Original query: \n\n  ', query, '\n');
+
+  const searchTerms = getSearchTerms(query);
+  console.log('All search terms: \n\n  ', searchTerms, '\n');
+
+  const filteredPhrases = getPhrasesMatchingSearch(phrases, searchTerms);
+  console.log('Matching phrases: \n\n  ', filteredPhrases, '\n');
 
   return filteredPhrases.join(' ');
 }
