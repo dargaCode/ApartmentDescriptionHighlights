@@ -78,7 +78,7 @@ function showTestResults(testResults) {
   const totalTests = testResults.length;
   let passedTests = 0;
 
-  console.log('\n\n================================');
+  console.log('\n\n\n\n\n\n================================');
   console.log('    DISPLAYING TEST RESULTS:');
   console.log('================================\n\n');
 
