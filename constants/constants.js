@@ -5,32 +5,44 @@ const CONSTANTS = {
     '!',
     '?',
     ';',
-    ':',
   ],
   keywords: [
     {
-      name: 'balcony',
-      categories: ['light', 'nature', 'view'],
+      name: 'appliance',
+      categories: ['kitchen', 'modern', 'chef',],
+    },
+    {
+      // to include plurals
+      name: 'balcon',
+      categories: ['light', 'nature', 'view',],
+    },
+    {
+      name: 'city',
+      categories: ['centrally', 'downtown', 'urban',],
     },
     {
       name: 'courtyard',
-      categories: ['amenities', 'light', 'nature', 'privacy'],
+      categories: ['amenities', 'light', 'nature', 'privacy',],
+    },
+    {
+      name: 'flooring',
+      categories: ['kitchen', 'room', 'tile',],
     },
     {
       name: 'gym',
-      categories: ['amenities', 'fitness', 'health'],
+      categories: ['amenities', 'fitness', 'health',],
     },
     {
       name: 'stove',
-      categories: ['appliance', 'kitchen', 'modern'],
+      categories: ['appliance', 'kitchen', 'modern',],
     },
     {
-      name: 'trails',
-      categories: ['amenities', 'health', 'nature'],
+      name: 'trail',
+      categories: ['amenities', 'health', 'nature',],
     },
     {
-      name: 'windows',
-      categories: ['light', 'nature', 'view'],
+      name: 'window',
+      categories: ['light', 'view',],
     },
   ],
 }
