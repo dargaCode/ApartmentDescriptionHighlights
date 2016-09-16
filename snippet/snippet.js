@@ -44,12 +44,36 @@ function splitStringIntoPhrases(str) {
   return phrases;
 }
 
-function filterPhrases(phrases, query) {
-  return phrases.filter(function(phrase) {
-    phrase = phrase.toLowerCase();
-    query = query.toLowerCase();
-    return phrase.indexOf(query) > -1;
+// filter phrases by matching any search term
+function getPhrasesMatchingSearch(phrases, searchTerms) {
+  const relevantPhrases = phrases.filter(function(phrase) {
+    return doesPhraseMatchSearch(phrase, searchTerms);
   });
+
+  return relevantPhrases;
+}
+
+function doesPhraseMatchSearch(phrase, searchTerms) {
+  // for more generous matching
+  phrase = phrase.toLowerCase();
+  console.log('\nphrase "%s"', phrase);
+
+  // does phrase contain any of the search terms?
+  for (let searchTerm of searchTerms) {
+    // should already be lower case, but just in case
+    searchTerm = searchTerm.toLowerCase();
+
+    const matchFound = phrase.includes(searchTerm);
+    console.log(' - includes searchTerm "%s"? %s', searchTerm, matchFound);
+
+    // it's a match the moment any term is found
+    if (matchFound) {
+      return true;
+    }
+  }
+
+  // no search terms were matched
+  return false;
 }
 
 // convert the query into a list of search terms
