@@ -3,13 +3,13 @@
 
 ## Overview
 
-Take a detailed description of an apartment, and a search query. Use them to generate a shorter description made of only relevant highlights. 
+Take a detailed description of an apartment, and a search query. Use them to generate a shorter highlight snippet made of only relevant phrases. 
 
 ## Usage
 
 Run `Node app.js` from the base directory to run the example in that file. 
 
-The file `constants/example-descriptions.js` includes some example apartment descriptions to query against. 
+The file `constants/example-descriptions.js` includes some more example apartment descriptions to query against. 
 
 ## Example
 
